@@ -21,9 +21,60 @@
     <ClCompile Include="HjkAudioLibDemo.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="HjkResamplingAudioSource.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="hjk_FloatVectorOperations.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="hjk_ CriticalSection.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="HjkAudioSource.h">
+      <Filter>HjkAudioLib</Filter>
+    </ClInclude>
+    <ClInclude Include="HjkAudioBuffer.h">
+      <Filter>HjkAudioLib</Filter>
+    </ClInclude>
+    <ClInclude Include="HjkResamplingAudioSource.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="OptionalScopedPointer.h">
+      <Filter>HjkAudioLib</Filter>
+    </ClInclude>
+    <ClInclude Include="HjkDefs.h">
+      <Filter>HjkAudioLib</Filter>
+    </ClInclude>
+    <ClInclude Include="hjk_memory.h">
+      <Filter>HjkAudioLib</Filter>
+    </ClInclude>
+    <ClInclude Include="hjk_ CriticalSection.h">
+      <Filter>HjkAudioLib</Filter>
+    </ClInclude>
+    <ClInclude Include="hjk_ScopedLock.h">
+      <Filter>HjkAudioLib</Filter>
+    </ClInclude>
+    <ClInclude Include="hjk_MathsFunctions.h">
+      <Filter>HjkAudioLib</Filter>
+    </ClInclude>
+    <ClInclude Include="hjk_HeapBlock.h">
+      <Filter>HjkAudioLib</Filter>
+    </ClInclude>
+    <ClInclude Include="hjk_Atomic.h">
+      <Filter>HjkAudioLib</Filter>
+    </ClInclude>
+    <ClInclude Include="Hjk_SpinLock.h">
+      <Filter>HjkAudioLib</Filter>
+    </ClInclude>
+    <ClInclude Include="hjk_FloatVectorOperations.h">
+      <Filter>HjkAudioLib</Filter>
+    </ClInclude>
+    <ClInclude Include="hjk_PlatformDefs.h">
+      <Filter>HjkAudioLib</Filter>
+    </ClInclude>
+    <ClInclude Include="hjk_audio_basics.h">
       <Filter>HjkAudioLib</Filter>
     </ClInclude>
   </ItemGroup>

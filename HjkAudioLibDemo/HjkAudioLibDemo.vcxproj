@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -88,10 +88,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>libcmt.lib;msvcrt.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -140,9 +143,26 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="HjkAudioLibDemo.cpp" />
+    <ClCompile Include="HjkResamplingAudioSource.cpp" />
+    <ClCompile Include="hjk_ CriticalSection.cpp" />
+    <ClCompile Include="hjk_FloatVectorOperations.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="HjkAudioBuffer.h" />
     <ClInclude Include="HjkAudioSource.h" />
+    <ClInclude Include="HjkDefs.h" />
+    <ClInclude Include="HjkResamplingAudioSource.h" />
+    <ClInclude Include="hjk_ CriticalSection.h" />
+    <ClInclude Include="hjk_Atomic.h" />
+    <ClInclude Include="hjk_audio_basics.h" />
+    <ClInclude Include="hjk_FloatVectorOperations.h" />
+    <ClInclude Include="hjk_HeapBlock.h" />
+    <ClInclude Include="hjk_MathsFunctions.h" />
+    <ClInclude Include="hjk_memory.h" />
+    <ClInclude Include="hjk_PlatformDefs.h" />
+    <ClInclude Include="hjk_ScopedLock.h" />
+    <ClInclude Include="OptionalScopedPointer.h" />
+    <ClInclude Include="Hjk_SpinLock.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
