@@ -17,7 +17,53 @@ public:
 
 	}
 	//其他的创建
+      //==============================================================================
+    /** Creates a buffer with a specified number of channels and samples.
 
+        The contents of the buffer will initially be undefined, so use clear() to
+        set all the samples to zero.
+
+        The buffer will allocate its memory internally, and this will be released
+        when the buffer is deleted. If the memory can't be allocated, this will
+        throw a std::bad_alloc exception.
+    */
+    HjkAudioBuffer(int numChannelsToAllocate,
+        int numSamplesToAllocate)
+        : numChannels(numChannelsToAllocate),
+        size(numSamplesToAllocate)
+    {
+        //@hjk debug flag
+         //   jassert(size >= 0 && numChannels >= 0);
+        allocateData();
+    }
+
+    /** Creates a buffer using a pre-allocated block of memory.
+
+        Note that if the buffer is resized or its number of channels is changed, it
+        will re-allocate memory internally and copy the existing data to this new area,
+        so it will then stop directly addressing this memory.
+
+        @param dataToReferTo    a pre-allocated array containing pointers to the data
+                                for each channel that should be used by this buffer. The
+                                buffer will only refer to this memory, it won't try to delete
+                                it when the buffer is deleted or resized.
+        @param numChannelsToUse the number of channels to use - this must correspond to the
+                                number of elements in the array passed in
+        @param numSamples       the number of samples to use - this must correspond to the
+                                size of the arrays passed in
+    */
+    HjkAudioBuffer(Type* const* dataToReferTo,
+        int numChannelsToUse,
+        int numSamples)
+        : numChannels(numChannelsToUse),
+        size(numSamples)
+    {
+        //@hjk debug flag
+         // jassert(dataToReferTo != nullptr);
+        //@hjk debug flag
+         //jassert(numChannelsToUse >= 0 && numSamples >= 0);
+        allocateChannels(dataToReferTo, 0);
+    }
 	~HjkAudioBuffer() = default;
 //返回通道数
 	int getNumChannels() const noexcept { return numChannels; }
@@ -315,5 +361,32 @@ private:
         isClear = false;
     }
 
+    /**对一个通道的一个区域应用一定范围的增益*/
+    void applyGainRamp(int channel, int startSample, int numSamples,
+        Type startGain, Type endGain) noexcept
+    {
+        /*
+        if (!isClear)
+        {
+            if (startGain == endGain)
+            {
+                applyGain(channel, startSample, numSamples, startGain);
+            }
+            else
+            {
+                jassert(isPositiveAndBelow(channel, numChannels));
+                jassert(startSample >= 0 && numSamples >= 0 && startSample + numSamples <= size);
 
+                const auto increment = (endGain - startGain) / (float)numSamples;
+                auto* d = channels[channel] + startSample;
+
+                while (--numSamples >= 0)
+                {
+                    *d++ *= startGain;
+                    startGain += increment;
+                }
+            }
+        }
+        */
+    }
 };

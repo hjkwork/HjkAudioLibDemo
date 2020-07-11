@@ -92,4 +92,15 @@ int roundToInt(const FloatType value) noexcept
 #else
 	return n.asInt[0];
 #endif
+   
 }
+/** Handy function for getting the number of elements in a simple const C array.
+       E.g.
+       @code
+       static int myArray[] = { 1, 2, 3 };
+
+       int numElements = numElementsInArray (myArray) // returns 3
+       @endcode
+   */
+template <typename Type, size_t N>
+constexpr int numElementsInArray(Type(&)[N]) noexcept { return N; }

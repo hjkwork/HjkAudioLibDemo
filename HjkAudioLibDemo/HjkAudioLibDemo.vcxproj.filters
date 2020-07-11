@@ -30,6 +30,12 @@
     <ClCompile Include="hjk_ CriticalSection.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="MutilChsAudioTransportSource.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="HjkAudioSourcePlayer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="HjkAudioSource.h">
@@ -76,6 +82,12 @@
     </ClInclude>
     <ClInclude Include="hjk_audio_basics.h">
       <Filter>HjkAudioLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MutilChsAudioTransportSource.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="HjkAudioSourcePlayer.h">
+      <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -143,13 +143,16 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="HjkAudioLibDemo.cpp" />
+    <ClCompile Include="HjkAudioSourcePlayer.cpp" />
     <ClCompile Include="HjkResamplingAudioSource.cpp" />
     <ClCompile Include="hjk_ CriticalSection.cpp" />
     <ClCompile Include="hjk_FloatVectorOperations.cpp" />
+    <ClCompile Include="MutilChsAudioTransportSource.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="HjkAudioBuffer.h" />
     <ClInclude Include="HjkAudioSource.h" />
+    <ClInclude Include="HjkAudioSourcePlayer.h" />
     <ClInclude Include="HjkDefs.h" />
     <ClInclude Include="HjkResamplingAudioSource.h" />
     <ClInclude Include="hjk_ CriticalSection.h" />
@@ -161,6 +164,7 @@
     <ClInclude Include="hjk_memory.h" />
     <ClInclude Include="hjk_PlatformDefs.h" />
     <ClInclude Include="hjk_ScopedLock.h" />
+    <ClInclude Include="MutilChsAudioTransportSource.h" />
     <ClInclude Include="OptionalScopedPointer.h" />
     <ClInclude Include="Hjk_SpinLock.h" />
   </ItemGroup>
